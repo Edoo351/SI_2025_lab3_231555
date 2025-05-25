@@ -45,7 +45,7 @@ jobs:
     needs: build-htmls
     if: github.ref_name == 'master'
     environment:
-      name: github-pages
+      name: github-pages  # Make sure 'master' is allowed in this environment in repo settings
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download HTML artifact
